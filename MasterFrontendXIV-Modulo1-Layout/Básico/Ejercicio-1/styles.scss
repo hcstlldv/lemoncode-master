@@ -1,3 +1,94 @@
-span {
-  color: red;
+$base-color: rgb(225, 81, 65, 1);
+$primary-color: rgb(3, 3, 252, 1);
+$secondary-color: rgb(48, 191, 40, 1);
+
+$types: (
+  primary: $primary-color,
+  secondary: $secondary-color,
+);
+$types-keys: map-keys($types);
+
+$lighten-config: (
+  lighten-1: 10,
+  lighten-2: 20,
+  lighten-3: 30,
+  lighten-4: 40,
+);
+$lighten-keys: map-keys($lighten-config);
+
+$darken-config: (
+  darken-1: 10,
+  darken-2: 20,
+  darken-3: 30,
+  darken-4: 40,
+);
+$darken-keys: map-keys($darken-config);
+
+$font-color-light: #fff;
+$font-color-dark: #000;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container-1 {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.box {
+  $self: &;
+
+  height: 120px;
+  width: 120px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  background-color: $base-color;
+
+  @each $key in $lighten-keys {
+    @at-root #{$self}--#{ $key } {
+      background-color: lighten($base-color, map-get($lighten-config, $key));
+      color: $font-color-dark;
+    }
+  }
+
+  @each $key in $darken-keys {
+    @at-root #{$self}--#{ $key } {
+      background-color: darken($base-color, map-get($darken-config, $key));
+      color: $font-color-light;
+    }
+  }
+}
+
+@each $type in $types-keys {
+  .box--#{ $type } {
+    background-color: map-get($types, $type);
+  }
+
+  @each $key in $lighten-keys {
+    .box--#{ $type }.box--#{ $key } {
+      background-color: lighten(
+        map-get($types, $type),
+        map-get($lighten-config, $key)
+      );
+      color: $font-color-dark;
+    }
+  }
+
+  @each $key in $darken-keys {
+    .box--#{ $type }.box--#{ $key } {
+      background-color: darken(
+        map-get($types, $type),
+        map-get($darken-config, $key)
+      );
+      color: $font-color-light;
+    }
+  }
 }
