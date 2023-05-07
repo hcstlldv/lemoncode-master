@@ -1,0 +1,153 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  height: 100%;
+  background-color: #141414;
+  color: #fff;
+  overflow-x: hidden;
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 40px;
+    position: sticky;
+    top: 0;
+    background-color: #141414;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6), 0 6px 6px rgba(0, 0, 0, 0.5);
+    z-index: 3;
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      @media screen and (max-width: 1280px) {
+        .platform-title {
+          display: none;
+        }
+      }
+    }
+
+    .header-buttons {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      > div {
+        padding: 12px 18px;
+        border-radius: 6px;
+        &:hover {
+          background-color: gray;
+        }
+      }
+    }
+  }
+
+  main {
+    padding: 20px;
+
+    .section-title {
+      #top-text {
+        font-weight: 600;
+      }
+      #top-text::after {
+        content: "5";
+
+        @media screen and (max-width: 1280px) {
+          content: "3";
+        }
+      }
+    }
+
+    .top,
+    .first,
+    .second {
+      display: flex;
+      gap: 8px;
+      padding: 30px;
+      margin: -30px;
+
+      .top-item,
+      .item {
+        flex: 1;
+      }
+
+      .item {
+        transition: all 300ms ease;
+
+        @media screen and (min-width: 1280px) {
+          &:hover {
+            z-index: 2;
+            transform: scale(1.2);
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6),
+              0 6px 6px rgba(0, 0, 0, 0.5);
+          }
+        }
+
+        &:first-child {
+          transform-origin: left;
+        }
+
+        &:last-child {
+          transform-origin: right;
+        }
+      }
+    }
+
+    .top-item {
+      > img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .first,
+    .second {
+      @media screen and (min-width: 1280px) {
+        overflow-x: auto;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      .item {
+        display: flex;
+        > img {
+          flex: 1;
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .top {
+        flex-direction: column;
+      }
+    }
+
+    @media screen and (max-width: 1280px) {
+      .top {
+        .top-item:nth-last-child(-n + 2) {
+          display: none;
+        }
+      }
+    }
+
+    @media screen and (max-width: 1280px) {
+      .first,
+      .second {
+        flex-wrap: wrap;
+      }
+    }
+
+    .section-title {
+      margin: 40px 0 6px 0;
+    }
+  }
+}
