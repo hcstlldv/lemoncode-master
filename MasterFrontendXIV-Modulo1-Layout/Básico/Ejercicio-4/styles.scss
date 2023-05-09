@@ -1,76 +1,76 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-  height: 100vh;
-  background-color: #f3f3f3;
+    height: 100vh;
+    background-color: #f3f3f3;
 }
 
 .grid {
-  padding: 50px;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 50px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .card {
-  $self: &;
+    $self: &;
 
-  border: 1px solid black;
-  border-radius: 4px;
-  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-  background-color: white;
-  display: grid;
-  grid-template-rows: 1fr 3fr;
-
-  #{ $self }__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-top-right-radius: inherit;
-    border-top-left-radius: inherit;
-  }
-
-  #{ $self }__content {
-    padding: 14px;
-    display: grid;
-    grid-template-rows: auto 1fr auto auto;
-    gap: 12px;
-  }
-
-  #{ $self }__title {
-    justify-self: start;
-    font-size: 28px;
-  }
-
-  #{ $self }__description {
-    font-size: 14px;
-    line-height: 18px;
-  }
-
-  #{ $self }__date {
-    justify-self: end;
-    font-size: 12px;
-    a {
-      color: rgb(0, 139, 139);
-      &:hover {
-        color: rgb(0, 139, 139, 0.8);
-      }
-    }
-  }
-
-  #{ $self }__button {
-    background-color: rgb(0, 139, 139);
-    color: white;
-    padding: 6px;
-    font-size: 12px;
+    border: 1px solid black;
     border-radius: 4px;
-    &:hover {
-      background-color: rgb(0, 139, 139, 0.8);
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+
+    #{ $self }__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-top-right-radius: inherit;
+        border-top-left-radius: inherit;
     }
-  }
+
+    #{ $self }__content {
+        padding: 14px;
+        display: grid;
+        grid-template-rows: auto 1fr auto auto;
+        gap: 12px;
+    }
+
+    #{ $self }__title {
+        justify-self: start;
+        font-size: 28px;
+    }
+
+    #{ $self }__description {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    #{ $self }__date {
+        justify-self: end;
+        font-size: 12px;
+        a {
+            color: rgb(0, 139, 139);
+            &:hover {
+                color: rgb(0, 139, 139, 0.8);
+            }
+        }
+    }
+
+    #{ $self }__button {
+        background-color: rgb(0, 139, 139);
+        color: white;
+        padding: 6px;
+        font-size: 12px;
+        border-radius: 4px;
+        &:hover {
+            background-color: rgb(0, 139, 139, 0.8);
+        }
+    }
 }

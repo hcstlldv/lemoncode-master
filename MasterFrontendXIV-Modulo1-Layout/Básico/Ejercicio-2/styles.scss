@@ -1,83 +1,83 @@
 $themes: (
-  theme-1: (
-    color: rgba(233, 51, 35, 1),
-    primary-font: monospace,
-    secondary-font: "Times New Roman, serif",
-    shadow: -30px 30px 40px rgba(0, 0, 0, 8),
-  ),
-  theme-2: (
-    color: rgba(0, 0, 245, 1),
-    primary-font: fantasy,
-    secondary-font: cursive,
-    shadow: 20px 20px 20px rgba(0, 0, 0, 8),
-  ),
+    theme-1: (
+        color: rgba(233, 51, 35, 1),
+        primary-font: monospace,
+        secondary-font: 'Times New Roman, serif',
+        shadow: -30px 30px 40px rgba(0, 0, 0, 8),
+    ),
+    theme-2: (
+        color: rgba(0, 0, 245, 1),
+        primary-font: fantasy,
+        secondary-font: cursive,
+        shadow: 20px 20px 20px rgba(0, 0, 0, 8),
+    ),
 );
 $theme-keys: map-keys($themes);
 $selected-theme: theme-1;
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .container {
-  padding: 50px;
-  display: flex;
-  justify-content: space-between;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .base,
 .important,
 .warning {
-  margin: 10px 0;
-  padding: 50px;
-  display: grid;
-  place-items: center;
-  color: #000;
-  border-radius: 6px;
-  border: 1px solid #3c3c3c;
+    margin: 10px 0;
+    padding: 50px;
+    display: grid;
+    place-items: center;
+    color: #000;
+    border-radius: 6px;
+    border: 1px solid #3c3c3c;
 }
 
 .principal-font,
 .secondary-font {
-  color: #000;
-  font-size: 20px;
-  margin: 20px 0;
+    color: #000;
+    font-size: 20px;
+    margin: 20px 0;
 }
 
 .box {
-  padding: 50px;
-  display: grid;
-  place-items: center;
-  color: #000;
-  border-radius: 6px;
-  border: 1px solid #3c3c3c;
+    padding: 50px;
+    display: grid;
+    place-items: center;
+    color: #000;
+    border-radius: 6px;
+    border: 1px solid #3c3c3c;
 }
 
 .theme {
-  .base {
-    background-color: map-get(map-get($themes, $selected-theme), color);
-  }
-  .important {
-    background-color: darken(
-      map-get(map-get($themes, $selected-theme), color),
-      30
-    );
-  }
-  .warning {
-    background-color: lighten(
-      map-get(map-get($themes, $selected-theme), color),
-      30
-    );
-  }
-  .principal-font {
-    font-family: map-get(map-get($themes, $selected-theme), primary-font);
-  }
-  .secondary-font {
-    font-family: map-get(map-get($themes, $selected-theme), secondary-font);
-  }
-  .box {
-    box-shadow: map-get(map-get($themes, $selected-theme), shadow);
-  }
+    .base {
+        background-color: map-get(map-get($themes, $selected-theme), color);
+    }
+    .important {
+        background-color: darken(
+            map-get(map-get($themes, $selected-theme), color),
+            30
+        );
+    }
+    .warning {
+        background-color: lighten(
+            map-get(map-get($themes, $selected-theme), color),
+            30
+        );
+    }
+    .principal-font {
+        font-family: map-get(map-get($themes, $selected-theme), primary-font);
+    }
+    .secondary-font {
+        font-family: map-get(map-get($themes, $selected-theme), secondary-font);
+    }
+    .box {
+        box-shadow: map-get(map-get($themes, $selected-theme), shadow);
+    }
 }

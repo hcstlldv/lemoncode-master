@@ -1,140 +1,140 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body {
-  height: 100vh;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
-  display: flex;
-  flex-direction: column;
-  row-gap: 8px;
-
-  .toolbar {
     display: flex;
-    padding: 10px;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    row-gap: 8px;
 
-    font-size: 16px;
-    line-height: 18px;
+    .toolbar {
+        display: flex;
+        padding: 10px;
+        justify-content: space-between;
+        align-items: center;
 
-    @media screen and (max-width: 768px) {
-      display: none;
+        font-size: 16px;
+        line-height: 18px;
+
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
     }
-  }
 
-  .page-title {
-    background-color: yellowgreen;
-    font-size: 20px;
-    line-height: 24px;
-    padding: 10px 4px;
-  }
+    .page-title {
+        background-color: yellowgreen;
+        font-size: 20px;
+        line-height: 24px;
+        padding: 10px 4px;
+    }
 }
 
 .page-container {
-  display: flex;
-  flex: 1;
-
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-  }
-
-  nav {
-    @media screen and (max-width: 768px) {
-      position: sticky;
-      top: 0;
-    }
-
-    background-color: darkolivegreen;
-
-    .menu-container {
-      display: flex;
-      flex-direction: column;
-      position: sticky;
-      top: 0;
-
-      .menu-title {
-        font-size: 18px;
-        line-height: 20px;
-        text-transform: uppercase;
-        align-self: center;
-        padding: 14px 24px;
-        color: #fff;
-        @media screen and (max-width: 768px) {
-          display: none;
-        }
-      }
-
-      ul {
-        display: flex;
-        flex-direction: column;
-
-        @media screen and (max-width: 768px) {
-          flex-direction: row;
-          padding: 10px;
-          gap: 10px;
-        }
-
-        li {
-          list-style-type: none;
-          background-color: wheat;
-          color: #000;
-          padding: 10px;
-          border-bottom: 1px solid gray;
-          &:hover {
-            background-color: darkkhaki;
-          }
-
-          @media screen and (max-width: 768px) {
-            flex: 1;
-            text-align: center;
-          }
-        }
-      }
-    }
-  }
-
-  main {
+    display: flex;
     flex: 1;
-    background-color: lightgray;
-    padding: 40px;
 
-    .list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 20px;
-
-      @media screen and (max-width: 768px) {
-        display: flex;
+    @media screen and (max-width: 768px) {
         flex-direction: column;
-      }
-
-      .card {
-        background-color: white;
-        border: 1px solid #000;
-        padding: 30px;
-        display: grid;
-        place-items: center;
-        border-radius: 6px;
-        text-align: center;
-        gap: 12px;
-
-        img {
-          border-radius: 100%;
-        }
-      }
     }
-  }
+
+    nav {
+        @media screen and (max-width: 768px) {
+            position: sticky;
+            top: 0;
+        }
+
+        background-color: darkolivegreen;
+
+        .menu-container {
+            display: flex;
+            flex-direction: column;
+            position: sticky;
+            top: 0;
+
+            .menu-title {
+                font-size: 18px;
+                line-height: 20px;
+                text-transform: uppercase;
+                align-self: center;
+                padding: 14px 24px;
+                color: #fff;
+                @media screen and (max-width: 768px) {
+                    display: none;
+                }
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+
+                @media screen and (max-width: 768px) {
+                    flex-direction: row;
+                    padding: 10px;
+                    gap: 10px;
+                }
+
+                li {
+                    list-style-type: none;
+                    background-color: wheat;
+                    color: #000;
+                    padding: 10px;
+                    border-bottom: 1px solid gray;
+                    &:hover {
+                        background-color: darkkhaki;
+                    }
+
+                    @media screen and (max-width: 768px) {
+                        flex: 1;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        flex: 1;
+        background-color: lightgray;
+        padding: 40px;
+
+        .list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+
+            @media screen and (max-width: 768px) {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .card {
+                background-color: white;
+                border: 1px solid #000;
+                padding: 30px;
+                display: grid;
+                place-items: center;
+                border-radius: 6px;
+                text-align: center;
+                gap: 12px;
+
+                img {
+                    border-radius: 100%;
+                }
+            }
+        }
+    }
 }
 
 footer {
-  background-color: wheat;
-  padding: 8px;
+    background-color: wheat;
+    padding: 8px;
 }
