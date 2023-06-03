@@ -1,0 +1,11 @@
+$background-color: darkred;
+
+.hello-world-class {
+  background-color: $background-color;
+  padding: 20px;
+  color: white;
+}
+.container-centered {
+  display: grid;
+  place-items: center;
+}
