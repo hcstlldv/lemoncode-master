@@ -71,12 +71,19 @@ body {
         .second {
             display: flex;
             gap: 8px;
-            padding: 30px;
-            margin: -30px;
 
-            .top-item,
-            .item {
-                flex: 1;
+            @media screen and (min-width: 1280px) {
+                .top-item,
+                .item {
+                    width: 100%;
+                }
+            }
+
+            @media screen and (max-width: 1280px) {
+                .top-item,
+                .item {
+                    flex: 1;
+                }
             }
 
             .item {
@@ -110,13 +117,6 @@ body {
 
         .first,
         .second {
-            @media screen and (min-width: 1280px) {
-                overflow-x: auto;
-                &::-webkit-scrollbar {
-                    display: none;
-                }
-            }
-
             .item {
                 display: flex;
                 > img {
