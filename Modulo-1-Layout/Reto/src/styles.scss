@@ -120,6 +120,9 @@ body {
             .item {
                 display: flex;
                 > img {
+                    @media screen and (min-width: 1280px) {
+                        width: 100%;
+                    }
                     flex: 1;
                 }
             }
