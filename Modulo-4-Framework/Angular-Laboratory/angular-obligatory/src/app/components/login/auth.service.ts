@@ -28,5 +28,7 @@ export class AuthService {
         return this.isLogged$.asObservable();
     }
 
-    getUsername() {}
+    getUsername() {
+        return 'master@lemoncode.net';
+    }
 }

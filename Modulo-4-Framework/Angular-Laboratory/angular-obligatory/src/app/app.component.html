@@ -16,6 +16,15 @@
                     <a mat-raised-button routerLink="/dashboard">Dashboard</a>
                     <a mat-raised-button routerLink="/gallery">Gallery</a>
                     <a mat-raised-button routerLink="/profile">Profile</a>
+                    <span> Hola {{ username$ | async }}! </span>
+                    <button
+                        mat-mini-fab
+                        color="warn"
+                        aria-label="Logout"
+                        (click)="logout()"
+                    >
+                        <mat-icon>open_in_new</mat-icon>
+                    </button>
                 </ng-container>
             </mat-toolbar-row>
         </mat-toolbar>
