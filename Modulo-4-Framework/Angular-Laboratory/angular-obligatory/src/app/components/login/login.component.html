@@ -1,4 +1,4 @@
-<form *ngIf="loginForm" [formGroup]="loginForm">
+<form *ngIf="loginForm" [formGroup]="loginForm" (ngSubmit)="login()">
     <label [tuiLabel]="'Nombre *'">
         <tui-input [formControlName]="'name'" tuiTextfieldSize="s">
             <input tuiTextfield type="text" placeholder="Ej: John Doe" />
@@ -13,7 +13,7 @@
             Nombre incorrecto
         </span>
     </label>
-    <label [tuiLabel]="'Contraseña *'">
+    <label [tuiLabel]="'Contraseña *'" style="margin-top: 8px">
         <tui-input-password [formControlName]="'password'" tuiTextfieldSize="s">
             <input placeholder="Make it secure!" tuiTextfield />
         </tui-input-password>
@@ -27,5 +27,14 @@
             Contraseña incorrecta
         </span>
     </label>
-    <button size="s" tuiButton type="submit">Enviar</button>
+    <button style="margin-top: 8px" size="s" tuiButton type="submit">
+        Enviar
+    </button>
+    <tui-notification
+        *ngIf="!isUserValid"
+        status="error"
+        class="tui-space_vertical-4"
+    >
+        Nombre o contraseña incorrectos
+    </tui-notification>
 </form>
