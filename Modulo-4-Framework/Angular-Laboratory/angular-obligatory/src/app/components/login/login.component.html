@@ -1,1 +1,31 @@
-<h1>Login component is working!</h1>
+<form *ngIf="loginForm" [formGroup]="loginForm">
+    <label [tuiLabel]="'Nombre *'">
+        <tui-input [formControlName]="'name'" tuiTextfieldSize="s">
+            <input tuiTextfield type="text" placeholder="Ej: John Doe" />
+        </tui-input>
+        <span
+            *ngIf="
+                this.loginForm.controls['name'].errors &&
+                this.loginForm.controls['name'].touched
+            "
+            style="color: red"
+        >
+            Nombre incorrecto
+        </span>
+    </label>
+    <label [tuiLabel]="'Contraseña *'">
+        <tui-input-password [formControlName]="'password'" tuiTextfieldSize="s">
+            <input placeholder="Make it secure!" tuiTextfield />
+        </tui-input-password>
+        <span
+            *ngIf="
+                this.loginForm.controls['password'].errors &&
+                this.loginForm.controls['password'].touched
+            "
+            style="color: red"
+        >
+            Contraseña incorrecta
+        </span>
+    </label>
+    <button size="s" tuiButton type="submit">Enviar</button>
+</form>
