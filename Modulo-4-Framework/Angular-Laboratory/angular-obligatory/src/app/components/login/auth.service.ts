@@ -8,7 +8,7 @@ type User = {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-    private readonly isLogged$ = new BehaviorSubject<boolean>(false);
+    private readonly isLogged$ = new BehaviorSubject<boolean>(this.hasToken());
 
     constructor() {}
 
@@ -17,10 +17,12 @@ export class AuthService {
         if (password !== '12345678') return false;
         if (name !== 'master@lemoncode.net') return false;
         this.isLogged$.next(true);
+        localStorage.setItem('isLogged', 'true');
         return true;
     }
 
     logout() {
+        localStorage.removeItem('isLogged');
         this.isLogged$.next(false);
     }
 
@@ -30,5 +32,9 @@ export class AuthService {
 
     getUsername() {
         return 'master@lemoncode.net';
+    }
+
+    private hasToken(): boolean {
+        return Boolean(localStorage.getItem('isLogged'));
     }
 }
