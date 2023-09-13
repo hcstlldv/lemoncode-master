@@ -1,3 +1,11 @@
+import {
+    TuiRootModule,
+    TuiDialogModule,
+    TuiAlertModule,
+    TuiLabelModule,
+    TuiTextfieldControllerModule,
+    TuiButtonModule,
+} from '@taiga-ui/core';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -15,6 +23,8 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TuiInputModule, TuiInputPasswordModule } from '@taiga-ui/kit';
 
 @NgModule({
     declarations: [
@@ -35,6 +45,16 @@ import { ProfileComponent } from './components/profile/profile.component';
         MatIconModule,
         MatButtonModule,
         MatDividerModule,
+        ReactiveFormsModule,
+        FormsModule,
+        TuiRootModule,
+        TuiDialogModule,
+        TuiAlertModule,
+        TuiInputModule,
+        TuiLabelModule,
+        TuiInputPasswordModule,
+        TuiTextfieldControllerModule,
+        TuiButtonModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
