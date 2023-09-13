@@ -8,13 +8,15 @@
                     aria-label="Example home icon"
                     fontIcon="home"
                 ></mat-icon>
-                <a mat-raised-button routerLink="/about">About</a>
-                <a mat-raised-button routerLink="/crud">Crud</a>
-                <a mat-raised-button routerLink="/dashboard">Dashboard</a>
-                <a mat-raised-button routerLink="/gallery">Gallery</a>
                 <a mat-raised-button routerLink="/home">Home</a>
                 <a mat-raised-button routerLink="/login">Login</a>
-                <a mat-raised-button routerLink="/profile">Profile</a>
+                <a mat-raised-button routerLink="/about">About</a>
+                <ng-container *ngIf="isLogged$ | async">
+                    <a mat-raised-button routerLink="/crud">Crud</a>
+                    <a mat-raised-button routerLink="/dashboard">Dashboard</a>
+                    <a mat-raised-button routerLink="/gallery">Gallery</a>
+                    <a mat-raised-button routerLink="/profile">Profile</a>
+                </ng-container>
             </mat-toolbar-row>
         </mat-toolbar>
     </header>
