@@ -9,7 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/login', pathMatch: 'full' },
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'about', component: AboutComponent },
     { path: 'crud', component: CrudComponent },
     { path: 'dashboard', component: DashboardComponent },
