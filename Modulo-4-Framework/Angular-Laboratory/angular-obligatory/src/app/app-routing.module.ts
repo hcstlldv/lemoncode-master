@@ -16,7 +16,7 @@ const routes: Routes = [
     { path: 'gallery', component: GalleryComponent },
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'Profile', component: ProfileComponent },
+    { path: 'profile', component: ProfileComponent },
 ];
 
 @NgModule({
