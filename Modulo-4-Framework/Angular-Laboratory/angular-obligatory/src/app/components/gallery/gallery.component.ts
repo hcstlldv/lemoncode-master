@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject, scan, tap } from 'rxjs';
 
 type Image = {
     id: number;
@@ -12,9 +13,13 @@ type Image = {
     styleUrls: ['./gallery.component.scss'],
 })
 export class GalleryComponent implements OnInit {
-    currentImageId: number = 1;
+    private next$ = new BehaviorSubject<number>(0);
+    currentImageId$ = this.next$.pipe(
+        scan((acc, value) => (value >= this.images.length ? 0 : value))
+    );
 
     images: Image[] = [
+        { id: 0, src: 'img0', title: 'image 0' },
         { id: 1, src: 'img1', title: 'image 1' },
         { id: 2, src: 'img2', title: 'image 2' },
         { id: 3, src: 'img3', title: 'image 3' },
@@ -23,11 +28,14 @@ export class GalleryComponent implements OnInit {
         { id: 6, src: 'img6', title: 'image 6' },
         { id: 7, src: 'img7', title: 'image 7' },
         { id: 8, src: 'img8', title: 'image 8' },
-        { id: 9, src: 'img9', title: 'image 9' },
     ];
     constructor() {}
 
     ngOnInit() {}
+
+    next(index?: number) {
+        this.next$.next(index ?? this.next$.getValue() + 1);
+    }
 
     trackByFn(index: number, item: Image) {
         return item.id;

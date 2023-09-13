@@ -2,8 +2,7 @@
 <div class="selected-image-container">
     <img
         class="selected-image"
-        src="../../../assets/img{{ currentImageId }}.jpg"
-        alt="{{ this.images[currentImageId].title }}"
+        [src]="'../../../assets/img' + (currentImageId$ | async) + '.jpg'"
     />
 </div>
 
@@ -13,13 +12,14 @@
             class="non-selected-image"
             src="../../../assets/{{ image.src }}.jpg"
             alt="{{ image.title }}"
+            (click)="next(image.id)"
         />
     </ng-container>
 </div>
 
 <div class="gallery-actions">
     <button size="s" tuiButton>Anterior</button>
-    <button size="s" tuiButton>Siguiente</button>
+    <button size="s" tuiButton (click)="next()">Siguiente</button>
     <button size="s" tuiButton>Aumentar</button>
     <button size="s" tuiButton>Disminuir</button>
     <button size="s" tuiButton>Play</button>
