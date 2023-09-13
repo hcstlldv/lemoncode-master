@@ -1,0 +1,30 @@
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+
+    .non-selected-image {
+        height: 100px;
+        object-fit: contain;
+    }
+}
+
+.selected-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .selected-image {
+        height: 400px;
+        object-fit: contain;
+    }
+}
+
+.gallery-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}

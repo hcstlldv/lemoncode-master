@@ -1,1 +1,27 @@
 <h1>Gallery component is working!</h1>
+<div class="selected-image-container">
+    <img
+        class="selected-image"
+        src="../../../assets/img{{ currentImageId }}.jpg"
+        alt="{{ this.images[currentImageId].title }}"
+    />
+</div>
+
+<div class="image-gallery">
+    <ng-container *ngFor="let image of images; trackBy: trackByFn">
+        <img
+            class="non-selected-image"
+            src="../../../assets/{{ image.src }}.jpg"
+            alt="{{ image.title }}"
+        />
+    </ng-container>
+</div>
+
+<div class="gallery-actions">
+    <button size="s" tuiButton>Anterior</button>
+    <button size="s" tuiButton>Siguiente</button>
+    <button size="s" tuiButton>Aumentar</button>
+    <button size="s" tuiButton>Disminuir</button>
+    <button size="s" tuiButton>Play</button>
+    <button size="s" tuiButton>Stop</button>
+</div>
