@@ -9,7 +9,9 @@
                     fontIcon="home"
                 ></mat-icon>
                 <a mat-raised-button routerLink="/home">Home</a>
-                <a mat-raised-button routerLink="/login">Login</a>
+                <ng-container *ngIf="!(isLogged$ | async)">
+                    <a mat-raised-button routerLink="/login">Login</a>
+                </ng-container>
                 <a mat-raised-button routerLink="/about">About</a>
                 <ng-container *ngIf="isLogged$ | async">
                     <a mat-raised-button routerLink="/crud">Crud</a>
