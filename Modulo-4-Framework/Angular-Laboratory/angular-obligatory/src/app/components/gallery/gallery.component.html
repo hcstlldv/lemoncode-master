@@ -18,8 +18,22 @@
 </div>
 
 <div class="gallery-actions">
-    <button size="s" tuiButton>Anterior</button>
-    <button size="s" tuiButton (click)="next()">Siguiente</button>
+    <button
+        size="s"
+        tuiButton
+        [disabled]="(prevDisabled$ | async) ?? true"
+        (click)="prev()"
+    >
+        Anterior
+    </button>
+    <button
+        size="s"
+        tuiButton
+        [disabled]="(nextDisabled$ | async) ?? true"
+        (click)="next()"
+    >
+        Siguiente
+    </button>
     <button size="s" tuiButton>Aumentar</button>
     <button size="s" tuiButton>Disminuir</button>
     <button size="s" tuiButton>Play</button>

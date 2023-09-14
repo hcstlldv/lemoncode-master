@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, filter, map, scan, tap } from 'rxjs';
+import { BehaviorSubject, filter, map, of, scan, tap } from 'rxjs';
 
 type Image = {
     id: number;
@@ -14,16 +14,22 @@ type Image = {
 })
 export class GalleryComponent implements OnInit {
     private next$ = new BehaviorSubject<number>(0);
+
     currentImageId$ = this.next$.pipe(
-        filter((value) => {
-            if (value >= this.images.length) {
-                this.next$.next(0);
-                return false;
-            }
-            return true;
-        }),
         map((value) => {
-            return value >= this.images.length ? 0 : value;
+            return value > 0 ? value : 0;
+        })
+    );
+
+    nextDisabled$ = this.next$.pipe(
+        map((value) => {
+            return value >= this.images.length - 1;
+        })
+    );
+
+    prevDisabled$ = this.next$.pipe(
+        map((value) => {
+            return value <= 0;
         })
     );
 
@@ -41,6 +47,10 @@ export class GalleryComponent implements OnInit {
     constructor() {}
 
     ngOnInit() {}
+
+    prev() {
+        this.next$.next(this.next$.getValue() - 1);
+    }
 
     next(index?: number) {
         this.next$.next(index ?? this.next$.getValue() + 1);
