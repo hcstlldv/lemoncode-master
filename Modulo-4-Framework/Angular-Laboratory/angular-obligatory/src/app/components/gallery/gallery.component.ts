@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, scan, tap } from 'rxjs';
+import { BehaviorSubject, filter, map, scan, tap } from 'rxjs';
 
 type Image = {
     id: number;
@@ -15,7 +15,16 @@ type Image = {
 export class GalleryComponent implements OnInit {
     private next$ = new BehaviorSubject<number>(0);
     currentImageId$ = this.next$.pipe(
-        scan((acc, value) => (value >= this.images.length ? 0 : value))
+        filter((value) => {
+            if (value >= this.images.length) {
+                this.next$.next(0);
+                return false;
+            }
+            return true;
+        }),
+        map((value) => {
+            return value >= this.images.length ? 0 : value;
+        })
     );
 
     images: Image[] = [
