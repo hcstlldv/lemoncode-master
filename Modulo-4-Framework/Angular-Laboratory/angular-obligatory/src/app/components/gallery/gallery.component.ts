@@ -13,21 +13,21 @@ type Image = {
     styleUrls: ['./gallery.component.scss'],
 })
 export class GalleryComponent implements OnInit {
-    private next$ = new BehaviorSubject<number>(0);
+    private imageId$ = new BehaviorSubject<number>(0);
 
-    currentImageId$ = this.next$.pipe(
+    currentImageId$ = this.imageId$.pipe(
         map((value) => {
             return value > 0 ? value : 0;
         })
     );
 
-    nextDisabled$ = this.next$.pipe(
+    nextDisabled$ = this.imageId$.pipe(
         map((value) => {
             return value >= this.images.length - 1;
         })
     );
 
-    prevDisabled$ = this.next$.pipe(
+    prevDisabled$ = this.imageId$.pipe(
         map((value) => {
             return value <= 0;
         })
@@ -49,11 +49,11 @@ export class GalleryComponent implements OnInit {
     ngOnInit() {}
 
     prev() {
-        this.next$.next(this.next$.getValue() - 1);
+        this.imageId$.next(this.imageId$.getValue() - 1);
     }
 
     next(index?: number) {
-        this.next$.next(index ?? this.next$.getValue() + 1);
+        this.imageId$.next(index ?? this.imageId$.getValue() + 1);
     }
 
     trackByFn(index: number, item: Image) {
