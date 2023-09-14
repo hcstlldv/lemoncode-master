@@ -52,6 +52,10 @@
     >
         Disminuir
     </button>
-    <button size="s" tuiButton (click)="start()">Play</button>
-    <button size="s" tuiButton (click)="stop()">Stop</button>
+    <button size="s" tuiButton *ngIf="!(isRunning$ | async)" (click)="start()">
+        Play
+    </button>
+    <button size="s" tuiButton *ngIf="isRunning$ | async" (click)="stop()">
+        Stop
+    </button>
 </div>

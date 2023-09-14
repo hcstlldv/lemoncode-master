@@ -35,6 +35,8 @@ export class GalleryComponent implements OnInit {
     private readonly maxHeight = 900;
     private readonly increaseStepHeight = 50;
 
+    isRunning$ = new BehaviorSubject<boolean>(false);
+
     currentImageId$ = merge(
         this.imageId$.pipe(
             map((value) => {
@@ -45,6 +47,7 @@ export class GalleryComponent implements OnInit {
             switchMap((value) => {
                 return timer(0, 2000).pipe(
                     map(() => value++),
+                    tap(() => this.isRunning$.next(true)),
                     takeUntil(this.stop$)
                 );
             }),
@@ -131,6 +134,7 @@ export class GalleryComponent implements OnInit {
     }
 
     stop() {
+        this.isRunning$.next(false);
         this.stop$.next();
     }
 
