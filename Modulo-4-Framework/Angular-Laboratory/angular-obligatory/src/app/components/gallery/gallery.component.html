@@ -3,6 +3,7 @@
     <img
         class="selected-image"
         [src]="'../../../assets/img' + (currentImageId$ | async) + '.jpg'"
+        height="{{ currentImageHeigth$ | async }}"
     />
 </div>
 
@@ -34,8 +35,22 @@
     >
         Siguiente
     </button>
-    <button size="s" tuiButton>Aumentar</button>
-    <button size="s" tuiButton>Disminuir</button>
+    <button
+        size="s"
+        tuiButton
+        [disabled]="(increaseDisabled$ | async) ?? true"
+        (click)="increase()"
+    >
+        Aumentar
+    </button>
+    <button
+        size="s"
+        tuiButton
+        [disabled]="(decreaseDisabled$ | async) ?? true"
+        (click)="decrease()"
+    >
+        Disminuir
+    </button>
     <button size="s" tuiButton>Play</button>
     <button size="s" tuiButton>Stop</button>
 </div>

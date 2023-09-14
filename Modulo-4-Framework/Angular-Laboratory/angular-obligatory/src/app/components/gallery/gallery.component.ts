@@ -14,6 +14,11 @@ type Image = {
 })
 export class GalleryComponent implements OnInit {
     private imageId$ = new BehaviorSubject<number>(0);
+    private imageHeight$ = new BehaviorSubject<number>(400);
+
+    private readonly minHeight = 50;
+    private readonly maxHeight = 900;
+    private readonly increaseStepHeight = 50;
 
     currentImageId$ = this.imageId$.pipe(
         map((value) => {
@@ -30,6 +35,26 @@ export class GalleryComponent implements OnInit {
     prevDisabled$ = this.imageId$.pipe(
         map((value) => {
             return value <= 0;
+        })
+    );
+
+    currentImageHeigth$ = this.imageHeight$.pipe(
+        map((height) => {
+            if (height < this.minHeight) return this.minHeight;
+            if (height > this.maxHeight) return this.maxHeight;
+            return height;
+        })
+    );
+
+    increaseDisabled$ = this.imageHeight$.pipe(
+        map((value) => {
+            return value >= this.maxHeight;
+        })
+    );
+
+    decreaseDisabled$ = this.imageHeight$.pipe(
+        map((value) => {
+            return value <= this.minHeight;
         })
     );
 
@@ -54,6 +79,18 @@ export class GalleryComponent implements OnInit {
 
     next(index?: number) {
         this.imageId$.next(index ?? this.imageId$.getValue() + 1);
+    }
+
+    increase() {
+        this.imageHeight$.next(
+            this.imageHeight$.getValue() + this.increaseStepHeight
+        );
+    }
+
+    decrease() {
+        this.imageHeight$.next(
+            this.imageHeight$.getValue() - this.increaseStepHeight
+        );
     }
 
     trackByFn(index: number, item: Image) {
