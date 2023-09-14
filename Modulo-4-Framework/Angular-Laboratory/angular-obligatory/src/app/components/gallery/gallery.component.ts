@@ -1,5 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, filter, map, of, scan, tap } from 'rxjs';
+import {
+    BehaviorSubject,
+    Subject,
+    filter,
+    map,
+    merge,
+    of,
+    scan,
+    switchMap,
+    take,
+    takeUntil,
+    tap,
+    timer,
+} from 'rxjs';
 
 type Image = {
     id: number;
@@ -15,15 +28,35 @@ type Image = {
 export class GalleryComponent implements OnInit {
     private imageId$ = new BehaviorSubject<number>(0);
     private imageHeight$ = new BehaviorSubject<number>(400);
+    private start$ = new Subject<number>();
+    private stop$ = new Subject<void>();
 
     private readonly minHeight = 50;
     private readonly maxHeight = 900;
     private readonly increaseStepHeight = 50;
 
-    currentImageId$ = this.imageId$.pipe(
-        map((value) => {
-            return value > 0 ? value : 0;
-        })
+    currentImageId$ = merge(
+        this.imageId$.pipe(
+            map((value) => {
+                return value > 0 ? value : 0;
+            })
+        ),
+        this.start$.pipe(
+            switchMap((value) => {
+                return timer(0, 2000).pipe(
+                    map(() => value++),
+                    takeUntil(this.stop$)
+                );
+            }),
+            map((value) => {
+                if (value >= this.images.length) {
+                    this.start$.next(0);
+                    return 0;
+                }
+                this.imageId$.next(value);
+                return value;
+            })
+        )
     );
 
     nextDisabled$ = this.imageId$.pipe(
@@ -91,6 +124,14 @@ export class GalleryComponent implements OnInit {
         this.imageHeight$.next(
             this.imageHeight$.getValue() - this.increaseStepHeight
         );
+    }
+
+    start() {
+        this.start$.next(this.imageId$.getValue());
+    }
+
+    stop() {
+        this.stop$.next();
     }
 
     trackByFn(index: number, item: Image) {
