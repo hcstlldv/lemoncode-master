@@ -18,7 +18,12 @@ export const ListPage: React.FC = () => {
 
     return (
         <>
-            <h2>Hello from List page</h2>{' '}
+            <h2>Hello from List page</h2>
+            <input
+                type="text"
+                className="search-bar"
+                placeholder="Lemoncode, Microsoft..."
+            />
             <div className="list-user-list-container">
                 <div className="list-header">
                     <span className="avatar-header">Avatar</span>
