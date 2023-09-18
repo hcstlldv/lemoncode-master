@@ -16,6 +16,13 @@ export const ListPage: React.FC = () => {
             .then((json) => setMembers(json));
     }, []);
 
+    const handleInputChange = (organization: string) => {
+        console.log(
+            '🚀 ~ file: list.tsx:20 ~ handleInputChange ~ organization:',
+            organization
+        );
+    };
+
     return (
         <>
             <h2>Hello from List page</h2>
@@ -23,6 +30,9 @@ export const ListPage: React.FC = () => {
                 type="text"
                 className="search-bar"
                 placeholder="Lemoncode, Microsoft..."
+                onChange={(e) => {
+                    handleInputChange(e.target.value);
+                }}
             />
             <div className="list-user-list-container">
                 <div className="list-header">
