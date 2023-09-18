@@ -8,10 +8,16 @@
     .non-selected-image {
         height: 100px;
         object-fit: contain;
+
         &:hover {
-            filter: drop-shadow(0 0 0.15rem #6a7dd1);
+            filter: drop-shadow(0 0 0.3rem #6a7dd1);
             transition: all 200ms ease-in-out;
         }
+    }
+
+    .preview-image {
+        filter: drop-shadow(0 0 0.3rem #6a7dd1);
+        transition: all 200ms ease-in-out;
     }
 }
 

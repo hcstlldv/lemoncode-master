@@ -12,6 +12,9 @@
     <ng-container *ngFor="let image of images; trackBy: trackByFn">
         <img
             class="non-selected-image"
+            [ngClass]="{
+                'preview-image': image.id === (currentImageId$ | async)
+            }"
             src="../../../assets/{{ image.src }}.jpg"
             alt="{{ image.title }}"
             (click)="next(image.id)"
