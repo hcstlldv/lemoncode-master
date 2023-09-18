@@ -10,31 +10,31 @@ interface MemberEntity {
 export const ListPage: React.FC = () => {
     const [members, setMembers] = React.useState<MemberEntity[]>([]);
     const [searchText, setSearchText] = React.useState('');
-    const [searchOrganization, setSearchedOrganization] = React.useState('');
+    const [searchOrganization, setSearchedOrganization] =
+        React.useState('lemoncode');
 
     React.useEffect(() => {
-        fetch(`https://api.github.com/orgs/lemoncode/members`)
-            .then((response) => response.json())
-            .then((json) => setMembers(json));
-    }, []);
+        fetch(`https://api.github.com/orgs/${searchOrganization}/members`)
+            .then((response) => {
+                if (!response.ok) return [];
+                return response.json();
+            })
+            .then((json) => {
+                return setMembers(json ?? []);
+            });
+    }, [searchOrganization]);
 
     React.useEffect(() => {
         const timerId = setTimeout(() => {
-            setSearchedOrganization(searchText);
+            if (searchText) {
+                setSearchedOrganization(searchText);
+            }
         }, 1000);
 
         return () => {
             clearTimeout(timerId);
         };
     }, [searchText]);
-
-    React.useEffect(() => {
-        if (!searchOrganization) return;
-        console.log(
-            '🚀 ~ file: list.tsx:33 ~ React.useEffect ~ searchOrganization:',
-            searchOrganization
-        );
-    }, [searchOrganization]);
 
     return (
         <>
@@ -43,6 +43,7 @@ export const ListPage: React.FC = () => {
                 type="text"
                 className="search-bar"
                 placeholder="Lemoncode, Microsoft..."
+                defaultValue={searchOrganization}
                 onChange={(e) => {
                     setSearchText(e.target.value);
                 }}
