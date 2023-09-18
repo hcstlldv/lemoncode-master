@@ -9,6 +9,8 @@ interface MemberEntity {
 
 export const ListPage: React.FC = () => {
     const [members, setMembers] = React.useState<MemberEntity[]>([]);
+    const [searchText, setSearchText] = React.useState('');
+    const [searchOrganization, setSearchedOrganization] = React.useState('');
 
     React.useEffect(() => {
         fetch(`https://api.github.com/orgs/lemoncode/members`)
@@ -16,12 +18,23 @@ export const ListPage: React.FC = () => {
             .then((json) => setMembers(json));
     }, []);
 
-    const handleInputChange = (organization: string) => {
+    React.useEffect(() => {
+        const timerId = setTimeout(() => {
+            setSearchedOrganization(searchText);
+        }, 1000);
+
+        return () => {
+            clearTimeout(timerId);
+        };
+    }, [searchText]);
+
+    React.useEffect(() => {
+        if (!searchOrganization) return;
         console.log(
-            '🚀 ~ file: list.tsx:20 ~ handleInputChange ~ organization:',
-            organization
+            '🚀 ~ file: list.tsx:33 ~ React.useEffect ~ searchOrganization:',
+            searchOrganization
         );
-    };
+    }, [searchOrganization]);
 
     return (
         <>
@@ -31,7 +44,7 @@ export const ListPage: React.FC = () => {
                 className="search-bar"
                 placeholder="Lemoncode, Microsoft..."
                 onChange={(e) => {
-                    handleInputChange(e.target.value);
+                    setSearchText(e.target.value);
                 }}
             />
             <div className="list-user-list-container">
