@@ -16,19 +16,19 @@ which shows how to create a list of users step by step.
 
 ## Paso a Paso
 
-- First we copy the above example, and do an _npm install_.
+-   First we copy the above example, and do an _npm install_.
 
 ```bash
 npm install
 ```
 
-- If we want to see what kind of data we are going to handle, we can open the web browser and see what Github's Rest API returns.
+-   If we want to see what kind of data we are going to handle, we can open the web browser and see what Github's Rest API returns.
 
 ```bash
 https://api.github.com/orgs/lemoncode/members
 ```
 
-- We are going to create an interface to have our interface typed, and modify the component that will display this listing.
+-   We are going to create an interface to have our interface typed, and modify the component that will display this listing.
 
 _./src/list.tsx_
 
@@ -54,7 +54,7 @@ export const ListPage: React.FC = () => {
 };
 ```
 
-- We are now going to load the data
+-   We are now going to load the data
 
 _./src/list.tsx_
 
@@ -71,7 +71,7 @@ export const ListPage: React.FC = () => {
   return (
 ```
 
-- Let's check that the data is indeed being loaded:
+-   Let's check that the data is indeed being loaded:
 
 _./src/list.tsx_
 
@@ -87,7 +87,7 @@ _./src/list.tsx_
   );
 ```
 
-- And now let's add a grid table showing the data:
+-   And now let's add a grid table showing the data:
 
 _./src/styles.css_
 
@@ -136,9 +136,9 @@ _./src/list.tsx_
   );
 ```
 
-- So far so good, but I want that when the user clicks on a member's name, he/she navigates to the
-  member navigates to the detail page of the application to display the token, we could first
-  first we could think of building something like this:
+-   So far so good, but I want that when the user clicks on a member's name, he/she navigates to the
+    member navigates to the detail page of the application to display the token, we could first
+    first we could think of building something like this:
 
 ```diff
   <td>
@@ -147,8 +147,8 @@ _./src/list.tsx_
   </td>
 ```
 
-- Another way to create the url is to use _generatePath_, but be careful in version 5
-  this did do the encoding of the parameters, in version 6 it didn't (https://github.com/remix-run/react-router/issues/7428)
+-   Another way to create the url is to use _generatePath_, but be careful in version 5
+    this did do the encoding of the parameters, in version 6 it didn't (https://github.com/remix-run/react-router/issues/7428)
 
 _./src/list.tsx_
 
@@ -170,13 +170,13 @@ _./src/list.tsx_
 What is the impact of not encoding? If you want to test it, replace the code inside the useEffect with this one;
 
 ```tsx
-setMembers([{ id: "2", login: "a/b", avatar_url: "" }]);
+setMembers([{ id: '2', login: 'a/b', avatar_url: '' }]);
 ```
 
 > In the architecture part we will learn how to remove "magic strings" from our application.
 > harcoding url all around our app is not a good idea.
 
-- Very interesting, but how can I read the id of the user I am receiving in the URL parameter?
+-   Very interesting, but how can I read the id of the user I am receiving in the URL parameter?
 
 First we are going to define the parameter in the url of our router.
 

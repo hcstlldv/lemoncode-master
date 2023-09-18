@@ -16,20 +16,20 @@ en el que se muestra como crear una lista de usuarios paso a paso.
 
 ## Paso a Paso
 
-- Primero copiamos el ejemplo anterior, y hacemos un _npm install_
+-   Primero copiamos el ejemplo anterior, y hacemos un _npm install_
 
 ```bash
 npm install
 ```
 
-- Si queremos ver qué tipo de datos vamos a manejar, podemos abrir el navegador web y ver que devuelve la API Rest de Github.
+-   Si queremos ver qué tipo de datos vamos a manejar, podemos abrir el navegador web y ver que devuelve la API Rest de Github.
 
 ```bash
 https://api.github.com/orgs/lemoncode/members
 ```
 
-- Vamos a crearnos un interfaz para tener tipada nuestra interfaz,
-  y el modificar el componente que mostrará este listado.
+-   Vamos a crearnos un interfaz para tener tipada nuestra interfaz,
+    y el modificar el componente que mostrará este listado.
 
 _./src/list.tsx_
 
@@ -55,7 +55,7 @@ export const ListPage: React.FC = () => {
 };
 ```
 
-- Vamos ahora a hacer la carga de datos:
+-   Vamos ahora a hacer la carga de datos:
 
 _./src/list.tsx_
 
@@ -72,7 +72,7 @@ export const ListPage: React.FC = () => {
   return (
 ```
 
-- Vamos a comprobar que efectivamente se están cargando los datos:
+-   Vamos a comprobar que efectivamente se están cargando los datos:
 
 _./src/list.tsx_
 
@@ -88,7 +88,7 @@ _./src/list.tsx_
   );
 ```
 
-- Y ahora vamos a añadir una tabla con grid que muestre los datos:
+-   Y ahora vamos a añadir una tabla con grid que muestre los datos:
 
 _./src/styles.css_
 
@@ -137,9 +137,9 @@ _./src/list.tsx_
   );
 ```
 
-- Hasta aquí bien, pero yo quiero que cuando el usuario pinche en el nombre de un
-  miembro navega a la página de detalle de la aplicación para mostrar la ficha, de
-  primeras podríamos pensar en construir algo así como:
+-   Hasta aquí bien, pero yo quiero que cuando el usuario pinche en el nombre de un
+    miembro navega a la página de detalle de la aplicación para mostrar la ficha, de
+    primeras podríamos pensar en construir algo así como:
 
 ```diff
   <td>
@@ -148,8 +148,8 @@ _./src/list.tsx_
   </td>
 ```
 
-- Otra forma de crear la url es usando _generatePath_, pero ojo en la versión 5
-  esto si hacía el encoding de los parámetros, en la 6 no (https://github.com/remix-run/react-router/issues/7428)
+-   Otra forma de crear la url es usando _generatePath_, pero ojo en la versión 5
+    esto si hacía el encoding de los parámetros, en la 6 no (https://github.com/remix-run/react-router/issues/7428)
 
 _./src/list.tsx_
 
@@ -171,14 +171,14 @@ _./src/list.tsx_
 ¿En qué impactar que no haga encoding? Si quieres hacer la prueba sustituye el código dentro del useEffect por este;
 
 ```tsx
-setMembers([{ id: "2", login: "a/b", avatar_url: "" }]);
+setMembers([{ id: '2', login: 'a/b', avatar_url: '' }]);
 ```
 
 > En la parte de arquitectura aprenderemos a quitar "strings mágicos" de nuestra
 > aplicación, ir harcodeando urls por nuestras páginas no es buena idea.
 
-- Muy interesante, ¿Pero cómo puedo leer el id del usuario que estoy
-  recibiendo por el parámetro de la URL?
+-   Muy interesante, ¿Pero cómo puedo leer el id del usuario que estoy
+    recibiendo por el parámetro de la URL?
 
 Primero vamos a definir el parámetro en la url de nuestro router
 
