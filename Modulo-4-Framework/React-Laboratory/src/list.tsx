@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { OrganizationContext } from './organization';
 
 interface MemberEntity {
     id: string;
@@ -10,11 +11,18 @@ interface MemberEntity {
 export const ListPage: React.FC = () => {
     const [members, setMembers] = React.useState<MemberEntity[]>([]);
     const [searchText, setSearchText] = React.useState('');
+    const { organization, setOrganization } =
+        React.useContext(OrganizationContext);
+
     const [searchOrganization, setSearchedOrganization] =
-        React.useState('lemoncode');
+        React.useState(organization);
 
     React.useEffect(() => {
-        fetch(`https://api.github.com/orgs/${searchOrganization}/members`)
+        fetch(
+            `https://api.github.com/orgs/${
+                searchOrganization ? searchOrganization : 'lemoncode'
+            }/members`
+        )
             .then((response) => {
                 if (!response.ok) return [];
                 return response.json();
@@ -43,7 +51,7 @@ export const ListPage: React.FC = () => {
                 type="text"
                 className="search-bar"
                 placeholder="Lemoncode, Microsoft..."
-                defaultValue={searchOrganization}
+                defaultValue={organization}
                 onChange={(e) => {
                     setSearchText(e.target.value);
                 }}
@@ -61,6 +69,9 @@ export const ListPage: React.FC = () => {
                         <Link
                             className="name-item"
                             to={`/detail/${member.login}`}
+                            onClick={() => {
+                                setOrganization(searchOrganization);
+                            }}
                         >
                             {member.login}
                         </Link>
