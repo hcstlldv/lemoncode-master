@@ -1,5 +1,5 @@
 export interface Character {
-  id: number;
+  id: string;
   name: string;
   status: string;
   species: string;
@@ -15,7 +15,7 @@ export interface Character {
 }
 
 export const createEmptyCharacter = (): Character => ({
-  id: 0,
+  id: '0',
   name: '',
   status: '',
   species: '',

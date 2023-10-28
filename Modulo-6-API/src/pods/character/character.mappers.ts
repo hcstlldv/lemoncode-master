@@ -5,7 +5,7 @@ export const mapCharacterFromApiToVm = (
   character: apiModel.Character
 ): viewModel.Character => ({
   ...character,
-  id: character.id,
+  id: String(character.id),
   name: character.name,
   status: character.status,
   sentences: character.sentences,
@@ -25,7 +25,7 @@ export const mapCharacterFromVmToApi = (
 ): apiModel.Character =>
   ({
     ...character,
-    id: character.id,
+    id: String(character.id),
     name: character.name,
     status: character.status,
     sentences: character.sentences,

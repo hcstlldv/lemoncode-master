@@ -11,7 +11,7 @@
   ],
   "characters": [
     {
-      "id": 360,
+      "id": "360",
       "name": "Toxic Morty",
       "status": "Dead",
       "species": "Humanoid",
@@ -32,25 +32,173 @@
       "created": "2018-01-10T18:18:05.422Z"
     },
     {
-      "id": 361,
-      "name": "Toxic Rick",
-      "status": "Dead",
-      "species": "Humanoid",
-      "sentences": "lorem ipsum",
-      "type": "Rick's toxic side",
+      "id": "363",
+      "name": "Trandor",
+      "status": "Alive",
+      "species": "Alien",
+      "type": "Krootabulan",
       "gender": "Male",
       "origin": {
-        "name": "Detoxifier",
-        "url": "https://rickandmortyapi.com/api/location/64"
+        "name": "Krootabulon",
+        "url": "https://rickandmortyapi.com/api/location/45"
       },
       "location": {
         "name": "Earth (Replacement Dimension)",
         "url": "https://rickandmortyapi.com/api/location/20"
       },
-      "image": "https://rickandmortyapi.com/api/character/avatar/361.jpeg",
-      "episode": ["https://rickandmortyapi.com/api/episode/27"],
-      "url": "https://rickandmortyapi.com/api/character/361",
-      "created": "2018-01-10T18:20:41.703Z"
+      "image": "https://rickandmortyapi.com/api/character/avatar/363.jpeg",
+      "episode": ["https://rickandmortyapi.com/api/episode/30"],
+      "url": "https://rickandmortyapi.com/api/character/363",
+      "created": "2018-01-10T18:54:36.578Z"
+    },
+    {
+      "id": "364",
+      "name": "Tree Person",
+      "status": "Dead",
+      "species": "Humanoid",
+      "type": "Teenyverse inhabitant",
+      "gender": "unknown",
+      "origin": {
+        "name": "Kyle's Teenyverse",
+        "url": "https://rickandmortyapi.com/api/location/50"
+      },
+      "location": {
+        "name": "Kyle's Teenyverse",
+        "url": "https://rickandmortyapi.com/api/location/50"
+      },
+      "image": "https://rickandmortyapi.com/api/character/avatar/364.jpeg",
+      "episode": ["https://rickandmortyapi.com/api/episode/17"],
+      "url": "https://rickandmortyapi.com/api/character/364",
+      "created": "2018-01-10T18:57:50.033Z"
+    },
+    {
+      "id": "365",
+      "name": "Tricia Lange",
+      "status": "Alive",
+      "species": "Human",
+      "type": "",
+      "gender": "Female",
+      "origin": {
+        "name": "Earth (Replacement Dimension)",
+        "url": "https://rickandmortyapi.com/api/location/20"
+      },
+      "location": {
+        "name": "Earth (Replacement Dimension)",
+        "url": "https://rickandmortyapi.com/api/location/20"
+      },
+      "image": "https://rickandmortyapi.com/api/character/avatar/365.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/26",
+        "https://rickandmortyapi.com/api/episode/27",
+        "https://rickandmortyapi.com/api/episode/36",
+        "https://rickandmortyapi.com/api/episode/38",
+        "https://rickandmortyapi.com/api/episode/46"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/365",
+      "created": "2018-01-10T18:59:31.842Z"
+    },
+    {
+      "id": "366",
+      "name": "Trunk Morty",
+      "status": "Alive",
+      "species": "Humanoid",
+      "type": "Trunk-Person",
+      "gender": "Male",
+      "origin": {
+        "name": "Trunk World",
+        "url": "https://rickandmortyapi.com/api/location/65"
+      },
+      "location": {
+        "name": "Citadel of Ricks",
+        "url": "https://rickandmortyapi.com/api/location/3"
+      },
+      "image": "https://rickandmortyapi.com/api/character/avatar/366.jpeg",
+      "episode": ["https://rickandmortyapi.com/api/episode/28"],
+      "url": "https://rickandmortyapi.com/api/character/366",
+      "created": "2018-01-10T19:03:13.558Z"
+    },
+    {
+      "id": "367",
+      "name": "Trunk Man",
+      "status": "Alive",
+      "species": "Humanoid",
+      "type": "Trunk-Person",
+      "gender": "Male",
+      "origin": {
+        "name": "Trunk World",
+        "url": "https://rickandmortyapi.com/api/location/65"
+      },
+      "location": {
+        "name": "Interdimensional Cable",
+        "url": "https://rickandmortyapi.com/api/location/6"
+      },
+      "image": "https://rickandmortyapi.com/api/character/avatar/367.jpeg",
+      "episode": [
+        "https://rickandmortyapi.com/api/episode/8",
+        "https://rickandmortyapi.com/api/episode/28"
+      ],
+      "url": "https://rickandmortyapi.com/api/character/367",
+      "created": "2018-01-10T19:05:34.004Z"
+    },
+    {
+      "id": "368",
+      "name": "Truth Tortoise",
+      "status": "unknown",
+      "species": "Mythological Creature",
+      "type": "Omniscient being",
+      "gender": "Male",
+      "origin": {
+        "name": "unknown",
+        "url": ""
+      },
+      "location": {
+        "name": "unknown",
+        "url": ""
+      },
+      "image": "https://rickandmortyapi.com/api/character/avatar/368.jpeg",
+      "episode": ["https://rickandmortyapi.com/api/episode/29"],
+      "url": "https://rickandmortyapi.com/api/character/368",
+      "created": "2018-01-10T19:14:35.885Z"
+    },
+    {
+      "id": "369",
+      "name": "Tusked Assassin",
+      "status": "unknown",
+      "species": "Alien",
+      "type": "Tuskfish",
+      "gender": "Male",
+      "origin": {
+        "name": "Resort Planet",
+        "url": "https://rickandmortyapi.com/api/location/37"
+      },
+      "location": {
+        "name": "Resort Planet",
+        "url": "https://rickandmortyapi.com/api/location/37"
+      },
+      "image": "https://rickandmortyapi.com/api/character/avatar/369.jpeg",
+      "episode": ["https://rickandmortyapi.com/api/episode/26"],
+      "url": "https://rickandmortyapi.com/api/character/369",
+      "created": "2018-01-10T19:17:00.093Z"
+    },
+    {
+      "id": "370",
+      "name": "Two Guys with Handlebar Mustaches",
+      "status": "Alive",
+      "species": "Human",
+      "type": "",
+      "gender": "Male",
+      "origin": {
+        "name": "unknown",
+        "url": ""
+      },
+      "location": {
+        "name": "Interdimensional Cable",
+        "url": "https://rickandmortyapi.com/api/location/6"
+      },
+      "image": "https://rickandmortyapi.com/api/character/avatar/370.jpeg",
+      "episode": ["https://rickandmortyapi.com/api/episode/8"],
+      "url": "https://rickandmortyapi.com/api/character/370",
+      "created": "2018-01-10T19:17:57.976Z"
     }
   ]
 }
