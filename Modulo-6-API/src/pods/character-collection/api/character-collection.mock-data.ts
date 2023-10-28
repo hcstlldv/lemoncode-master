@@ -6,6 +6,7 @@ export const mockCharacterCollection: CharacterEntityApi[] = [
     name: 'Toxic Morty',
     status: 'Dead',
     species: 'Humanoid',
+    sentences: 'hello world',
     type: "Morty's toxic side",
     gender: 'Male',
     origin: {
@@ -26,6 +27,7 @@ export const mockCharacterCollection: CharacterEntityApi[] = [
     name: 'Toxic Rick',
     status: 'Dead',
     species: 'Humanoid',
+    sentences: 'lorem ipsum',
     type: "Rick's toxic side",
     gender: 'Male',
     origin: {

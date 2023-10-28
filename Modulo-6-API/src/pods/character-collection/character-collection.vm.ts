@@ -3,6 +3,7 @@ export interface CharacterEntityVm {
   name: string;
   status: string;
   species: string;
+  sentences: string;
   type: string;
   gender: string;
   origin: { name: string; url: string };

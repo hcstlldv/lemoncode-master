@@ -38,6 +38,9 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
           <Typography variant="subtitle1" gutterBottom>
             {character.type}
           </Typography>
+          <Typography variant="subtitle1" gutterBottom>
+            {character.sentences}
+          </Typography>
         </div>
       </CardContent>
       <CardActions>

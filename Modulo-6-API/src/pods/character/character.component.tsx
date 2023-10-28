@@ -39,6 +39,12 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
             multiline={true}
             rows={3}
           />
+          <TextFieldComponent
+            name="sentences"
+            label="Sentences"
+            multiline={true}
+            rows={3}
+          />
           <Button type="submit" variant="contained" color="primary">
             Save
           </Button>
