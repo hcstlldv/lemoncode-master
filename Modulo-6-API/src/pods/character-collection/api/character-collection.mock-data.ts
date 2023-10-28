@@ -1,7 +1,6 @@
-import { Hotel } from './hotel.api-model';
-import { Lookup } from 'common/models';
+import { CharacterEntityApi } from './character-collection.api-model';
 
-export const mockHotelCollection: Hotel[] = [
+export const mockCharacterCollection: CharacterEntityApi[] = [
   {
     id: '1',
     type: 'hotel',
@@ -15,7 +14,7 @@ export const mockHotelCollection: Hotel[] = [
     confidenceRating: 5,
     countryCode: 'US',
     deepLink:
-      'http://www.travelnow.com/templates/55505/hotels/213497/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null',
+      'http://www.travelnow.com/templates/55505/characters/213497/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null',
     highRate: 210,
     hotelId: 213497,
     hotelInDestination: true,
@@ -27,7 +26,7 @@ export const mockHotelCollection: Hotel[] = [
     locationDescription: 'Near Pike Place Market',
     lowRate: 175,
     metadata: {
-      path: '/hotels/8',
+      path: '/characters/8',
     },
     postalCode: 98101,
     propertyCategory: 1,
@@ -55,7 +54,7 @@ export const mockHotelCollection: Hotel[] = [
     confidenceRating: 52,
     countryCode: 'US',
     deepLink:
-      'http://www.travelnow.com/templates/55505/hotels/132138/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null',
+      'http://www.travelnow.com/templates/55505/characters/132138/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null',
     highRate: 489,
     hotelId: 132138,
     hotelInDestination: true,
@@ -67,7 +66,7 @@ export const mockHotelCollection: Hotel[] = [
     locationDescription: 'Near Pike Place Market',
     lowRate: 189,
     metadata: {
-      path: '/hotels/6',
+      path: '/characters/6',
     },
     postalCode: 98101,
     propertyCategory: 1,
@@ -81,16 +80,5 @@ export const mockHotelCollection: Hotel[] = [
     tripAdvisorRating: 4.5,
     tripAdvisorRatingUrl:
       'http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.5-12345-4.gif',
-  },
-];
-
-export const mockCities: Lookup[] = [
-  {
-    id: 'Seattle',
-    name: 'Seattle',
-  },
-  {
-    id: 'New York',
-    name: 'New York',
   },
 ];

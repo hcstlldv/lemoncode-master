@@ -21,7 +21,7 @@
       "name": "Burlingame"
     }
   ],
-  "hotels": [
+  "characters": [
     {
       "id": "1",
       "type": "hotel",
@@ -34,7 +34,7 @@
       "city": "Seattle",
       "confidenceRating": 52,
       "countryCode": "US",
-      "deepLink": "http://www.travelnow.com/templates/55505/hotels/125727/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
+      "deepLink": "http://www.travelnow.com/templates/55505/characters/125727/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
       "highRate": 289,
       "hotelId": 1257278,
       "hotelInDestination": true,
@@ -46,7 +46,7 @@
       "locationDescription": "Near Pike Place Market",
       "lowRate": 259,
       "metadata": {
-        "path": "/hotels/1"
+        "path": "/characters/1"
       },
       "postalCode": 98101,
       "propertyCategory": 1,
@@ -71,7 +71,7 @@
       "city": "Seattle",
       "confidenceRating": 5,
       "countryCode": "US",
-      "deepLink": "http://www.travelnow.com/templates/55505/hotels/164122/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
+      "deepLink": "http://www.travelnow.com/templates/55505/characters/164122/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
       "highRate": 259,
       "hotelId": 164122,
       "hotelInDestination": true,
@@ -83,7 +83,7 @@
       "locationDescription": "Near Pike Place Market",
       "lowRate": 209,
       "metadata": {
-        "path": "/hotels/2"
+        "path": "/characters/2"
       },
       "postalCode": 98101,
       "propertyCategory": 1,
@@ -108,7 +108,7 @@
       "city": "Seattle",
       "confidenceRating": 30,
       "countryCode": "US",
-      "deepLink": "http://www.travelnow.com/templates/55505/hotels/164116/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
+      "deepLink": "http://www.travelnow.com/templates/55505/characters/164116/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
       "highRate": 320,
       "hotelId": 164116,
       "hotelInDestination": true,
@@ -120,7 +120,7 @@
       "locationDescription": "Near Pike Place Market",
       "lowRate": 205,
       "metadata": {
-        "path": "/hotels/3"
+        "path": "/characters/3"
       },
       "postalCode": 98101,
       "propertyCategory": 1,
@@ -145,7 +145,7 @@
       "city": "Burlingame",
       "confidenceRating": 95,
       "countryCode": "US",
-      "deepLink": "http://www.travelnow.com/templates/55505/hotels/127092/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
+      "deepLink": "http://www.travelnow.com/templates/55505/characters/127092/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
       "highRate": 269,
       "hotelId": 127092,
       "hotelInDestination": true,
@@ -157,7 +157,7 @@
       "locationDescription": "Near Pike Place Market",
       "lowRate": 179,
       "metadata": {
-        "path": "/hotels/4"
+        "path": "/characters/4"
       },
       "postalCode": 98121,
       "propertyCategory": 1,
@@ -182,7 +182,7 @@
       "city": "Burlingame",
       "confidenceRating": 52,
       "countryCode": "US",
-      "deepLink": "http://www.travelnow.com/templates/55505/hotels/113426/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
+      "deepLink": "http://www.travelnow.com/templates/55505/characters/113426/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
       "highRate": 188.202,
       "hotelId": 113426,
       "hotelInDestination": true,
@@ -194,7 +194,7 @@
       "locationDescription": "Near Pike Place Market",
       "lowRate": 187.202,
       "metadata": {
-        "path": "/hotels/5"
+        "path": "/characters/5"
       },
       "postalCode": 98101,
       "propertyCategory": 1,
@@ -219,7 +219,7 @@
       "city": "Seattle",
       "confidenceRating": 52,
       "countryCode": "US",
-      "deepLink": "http://www.travelnow.com/templates/55505/hotels/132138/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
+      "deepLink": "http://www.travelnow.com/templates/55505/characters/132138/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
       "highRate": 489,
       "hotelId": 132138,
       "hotelInDestination": true,
@@ -231,7 +231,7 @@
       "locationDescription": "Near Pike Place Market",
       "lowRate": 189,
       "metadata": {
-        "path": "/hotels/6"
+        "path": "/characters/6"
       },
       "postalCode": 98101,
       "propertyCategory": 1,
@@ -256,7 +256,7 @@
       "city": "Burlingame",
       "confidenceRating": 95,
       "countryCode": "US",
-      "deepLink": "http://www.travelnow.com/templates/55505/hotels/191964/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
+      "deepLink": "http://www.travelnow.com/templates/55505/characters/191964/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
       "highRate": 159,
       "hotelId": 191964,
       "hotelInDestination": true,
@@ -268,7 +268,7 @@
       "locationDescription": "In Seattle (University District)",
       "lowRate": 119,
       "metadata": {
-        "path": "/hotels/7"
+        "path": "/characters/7"
       },
       "postalCode": 98105,
       "propertyCategory": 1,
@@ -293,7 +293,7 @@
       "city": "Seattle",
       "confidenceRating": 5,
       "countryCode": "US",
-      "deepLink": "http://www.travelnow.com/templates/55505/hotels/213497/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
+      "deepLink": "http://www.travelnow.com/templates/55505/characters/213497/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
       "highRate": 210,
       "hotelId": 213497,
       "hotelInDestination": true,
@@ -305,7 +305,7 @@
       "locationDescription": "Near Pike Place Market",
       "lowRate": 175,
       "metadata": {
-        "path": "/hotels/8"
+        "path": "/characters/8"
       },
       "postalCode": 98101,
       "propertyCategory": 1,
@@ -330,7 +330,7 @@
       "city": "Seattle",
       "confidenceRating": 45,
       "countryCode": "US",
-      "deepLink": "http://www.travelnow.com/templates/55505/hotels/119562/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
+      "deepLink": "http://www.travelnow.com/templates/55505/characters/119562/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
       "highRate": 239.5368,
       "hotelId": 119562,
       "hotelInDestination": true,
@@ -342,7 +342,7 @@
       "locationDescription": "Near Pike Place Market",
       "lowRate": 189.4252,
       "metadata": {
-        "path": "/hotels/9"
+        "path": "/characters/9"
       },
       "postalCode": 98121,
       "propertyCategory": 1,
@@ -367,7 +367,7 @@
       "city": "Seattle",
       "confidenceRating": 95,
       "countryCode": "US",
-      "deepLink": "http://www.travelnow.com/templates/55505/hotels/342070/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
+      "deepLink": "http://www.travelnow.com/templates/55505/characters/342070/overview?lang=en&amp;currency=USD&amp;standardCheckin=null/null/null&amp;standardCheckout=null/null/null",
       "highRate": 289,
       "hotelId": 342070,
       "hotelInDestination": true,
@@ -379,7 +379,7 @@
       "locationDescription": "Near Pacific Northwest Ballet",
       "lowRate": 229,
       "metadata": {
-        "path": "/hotels/10"
+        "path": "/characters/10"
       },
       "postalCode": 98109,
       "propertyCategory": 1,
