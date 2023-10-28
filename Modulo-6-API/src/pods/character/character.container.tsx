@@ -13,17 +13,17 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
   const [character, setCharacter] = React.useState<Character>(
     createEmptyCharacter()
   );
-  const [cities, setCities] = React.useState<Lookup[]>([]);
+  const [genders, setGenders] = React.useState<Lookup[]>([]);
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
   const handleLoadCityCollection = async () => {
-    const apiCities = await api.getCities();
-    setCities(apiCities);
+    const apiGenders = await api.getGenders();
+    setGenders(apiGenders);
   };
 
   const handleLoadCharacter = async () => {
-    const apiCharacter = await api.getCharacter(id);
+    const apiCharacter = await api.getCharacter(Number(id));
     setCharacter(mapCharacterFromApiToVm(apiCharacter));
   };
 
@@ -47,7 +47,7 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
   return (
     <CharacterComponent
       character={character}
-      cities={cities}
+      genders={genders}
       onSave={handleSave}
     />
   );
