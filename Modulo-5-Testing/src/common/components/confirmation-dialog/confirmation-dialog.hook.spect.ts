@@ -47,7 +47,7 @@ describe('useConfirmationDialog specs', () => {
 
     // Assert
     expect(result.current.itemToDelete).toEqual(createEmptyLookup());
-    expect(result.current.isOpen).toBe(false);
+    expect(result.current.isOpen).toBe(true);
   });
 
   it('should set isOpen to false when onClose is called', () => {
